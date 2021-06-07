@@ -71,7 +71,7 @@ public class CoinFlip
         Console.WriteLine("One of the examples are: " + whichIsIt.charName + ":" + whichIsIt.consecutive);
         //Console.WriteLine("The size of our data collection is: " + consecutiveRolls.Count());
 
-        for (int i=1; i<=currMaxConsec; i++)
+        for (int i=0; i<=currMaxConsec; i++)
         {
             //var temp = consecutiveRolls.Where(x => x.consecutive == i).Select(x => x.charName).ToList();
             //int aCount = temp.Where(x => x.Equals('A')).Count(); // == null ? 0 : temp.Where(x => x.Equals('A')).Count();
