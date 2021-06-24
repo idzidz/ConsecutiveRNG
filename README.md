@@ -10,8 +10,8 @@ Output: Number of times that both odds have consecutively happened.
 
 ## Example
 
-User input of 50 will set the odds of A to 50% and B to 50%.
-Second user input will choose 50 test to be done.
+User input of 73 will set the odds of A to 73% and B to 27%.
+Second user input will choose 1,000,000 test to be done.
 
 ```cmd
 What are the odds of A happening? (ex. 20%, enter 20)
