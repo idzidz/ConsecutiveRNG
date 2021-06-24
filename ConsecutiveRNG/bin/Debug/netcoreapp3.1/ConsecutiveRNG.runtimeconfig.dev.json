@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\snowy\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\snowy\\.nuget\\packages"
+    ]
+  }
+}

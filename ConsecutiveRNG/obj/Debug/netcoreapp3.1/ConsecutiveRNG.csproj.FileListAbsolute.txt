@@ -1,0 +1,13 @@
+C:\Users\snowy\OneDrive\Desktop\ConsecutiveRNG\ConsecutiveRNG\bin\Debug\netcoreapp3.1\ConsecutiveRNG.exe
+C:\Users\snowy\OneDrive\Desktop\ConsecutiveRNG\ConsecutiveRNG\bin\Debug\netcoreapp3.1\ConsecutiveRNG.deps.json
+C:\Users\snowy\OneDrive\Desktop\ConsecutiveRNG\ConsecutiveRNG\bin\Debug\netcoreapp3.1\ConsecutiveRNG.runtimeconfig.json
+C:\Users\snowy\OneDrive\Desktop\ConsecutiveRNG\ConsecutiveRNG\bin\Debug\netcoreapp3.1\ConsecutiveRNG.runtimeconfig.dev.json
+C:\Users\snowy\OneDrive\Desktop\ConsecutiveRNG\ConsecutiveRNG\bin\Debug\netcoreapp3.1\ConsecutiveRNG.dll
+C:\Users\snowy\OneDrive\Desktop\ConsecutiveRNG\ConsecutiveRNG\bin\Debug\netcoreapp3.1\ConsecutiveRNG.pdb
+C:\Users\snowy\OneDrive\Desktop\ConsecutiveRNG\ConsecutiveRNG\obj\Debug\netcoreapp3.1\ConsecutiveRNG.csprojAssemblyReference.cache
+C:\Users\snowy\OneDrive\Desktop\ConsecutiveRNG\ConsecutiveRNG\obj\Debug\netcoreapp3.1\ConsecutiveRNG.AssemblyInfoInputs.cache
+C:\Users\snowy\OneDrive\Desktop\ConsecutiveRNG\ConsecutiveRNG\obj\Debug\netcoreapp3.1\ConsecutiveRNG.AssemblyInfo.cs
+C:\Users\snowy\OneDrive\Desktop\ConsecutiveRNG\ConsecutiveRNG\obj\Debug\netcoreapp3.1\ConsecutiveRNG.csproj.CoreCompileInputs.cache
+C:\Users\snowy\OneDrive\Desktop\ConsecutiveRNG\ConsecutiveRNG\obj\Debug\netcoreapp3.1\ConsecutiveRNG.dll
+C:\Users\snowy\OneDrive\Desktop\ConsecutiveRNG\ConsecutiveRNG\obj\Debug\netcoreapp3.1\ConsecutiveRNG.pdb
+C:\Users\snowy\OneDrive\Desktop\ConsecutiveRNG\ConsecutiveRNG\obj\Debug\netcoreapp3.1\ConsecutiveRNG.genruntimeconfig.cache
