@@ -79,7 +79,7 @@ public class CoinFlip
         //Console.WriteLine("One of the examples are: " + whichIsIt.charName + ":" + whichIsIt.consecutive);
         //Console.WriteLine("The size of our data collection is: " + consecutiveRolls.Count());
 
-        for (int i=0; i<=currMaxConsec; i++)
+        for (int i = 0; i < currMaxConsec+1; i++)
         {
             int aCount = consecutiveRolls.Where(x => x.consecutive == i && x.charName == 'A').Count();
             int bCount = consecutiveRolls.Where(x => x.consecutive == i && x.charName == 'B').Count();
@@ -90,22 +90,28 @@ public class CoinFlip
         }
 
         Console.WriteLine("\n//////////////////////////////////// \nConsecutive A wins along with length \n////////////////////////////////////\n");
-        for (int i=0; i<=currMaxConsec; i++)
+        int summation = 0;
+        for (int i = 0; i < currMaxConsec+1; i++)
         {
             if (finalResults[i, 0] != 0)
             {
                 Console.WriteLine("Number of consec. wins for A at length " + i + ": " + finalResults[i, 0]);
+                summation += finalResults[i, 0]*i;
             }
         }
+        Console.WriteLine("Summation of wins = " + summation);
 
         Console.WriteLine("\n//////////////////////////////////// \nConsecutive B wins along with length \n////////////////////////////////////\n");
-        for (int i = 0; i <= currMaxConsec; i++)
+        summation = 0;
+        for (int i = 0; i < currMaxConsec+1; i++)
         {
             if (finalResults[i, 1] != 0)
             {
-                Console.WriteLine("Number of consec. wins for B at length " + i + ": " + finalResults[i, 0]);
+                Console.WriteLine("Number of consec. wins for B at length " + i + ": " + finalResults[i, 1]);
+                summation += finalResults[i, 0]*i;
             }
         }
+        Console.WriteLine("Summation of wins = " + summation);
 
 
         Console.WriteLine(collection[2] + " rolls were done.");
