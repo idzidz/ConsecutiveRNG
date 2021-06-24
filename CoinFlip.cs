@@ -8,10 +8,7 @@ public class CoinFlip
 	{
         int A=0, B=0, counter=0, tracker=0;
         int randomInt;
-
-        // This will have the first occurrence of 'A' or 'B' have a single point at chain length of 0
-        // Will be ignoring chain lengths of 0 anyway, so my bad code is ok here.
-        char currentOdd = 'Z';
+        char currentOdd = new char();
 
         decimal[] collection = DesiredOdds();
         List<char> consecutiveChars = new List<char>();
@@ -28,11 +25,18 @@ public class CoinFlip
         while(counter < collection[2])
         {
             randomInt = rnd.Next(1, 101);
+            // ex. A odds are 20%, therefore if chosen value is 1-20, A wins.
+            // Hence B odds will be 80%, therefore if chosen value is 21-100, B wins.
+            // Console.WriteLine("Roll was: " + randomInt);
             if (randomInt <= collection[0])
             {
-                //Console.WriteLine("A wins with roll " + randomInt);
+                //Console.WriteLine("A wins with roll " + randomInt + "\n");
                 A++;
-                if (currentOdd == 'A') { tracker++; }
+                if (counter == 0)
+                {
+                    currentOdd = 'A';
+                    tracker = 1;
+                }else if (currentOdd == 'A') { tracker++; }
                 else
                 {
                     currentOdd = 'A';
@@ -44,11 +48,15 @@ public class CoinFlip
                     tracker = 1;
                 }
 
-            }else if(randomInt > collection[1])
+            }else if(randomInt > collection[0])
             {
-                //Console.WriteLine("B wins with roll " + randomInt);
+                //Console.WriteLine("B wins with roll " + randomInt + "\n");
                 B++;
-                if (currentOdd == 'B') { tracker++; }
+                if (counter == 0)
+                {
+                    currentOdd = 'B';
+                    tracker = 1;
+                }else if (currentOdd == 'B') { tracker++; }
                 else
                 {
                     currentOdd = 'B';
@@ -67,35 +75,38 @@ public class CoinFlip
         var whichIsIt = consecutiveRolls.Where(x => x.consecutive == currMaxConsec).ToList().FirstOrDefault();
         int[,] finalResults = new int[currMaxConsec+1, 2];
 
-        Console.WriteLine("Current max consec is: " + currMaxConsec);
-        Console.WriteLine("One of the examples are: " + whichIsIt.charName + ":" + whichIsIt.consecutive);
+        //Console.WriteLine("Current max consec is: " + currMaxConsec);
+        //Console.WriteLine("One of the examples are: " + whichIsIt.charName + ":" + whichIsIt.consecutive);
         //Console.WriteLine("The size of our data collection is: " + consecutiveRolls.Count());
 
         for (int i=0; i<=currMaxConsec; i++)
         {
-            //var temp = consecutiveRolls.Where(x => x.consecutive == i).Select(x => x.charName).ToList();
-            //int aCount = temp.Where(x => x.Equals('A')).Count(); // == null ? 0 : temp.Where(x => x.Equals('A')).Count();
-            //int bCount = temp.Where(x => x.Equals('B')).Count(); // == null ? 0 : temp.Where(x => x.Equals('B')).Count();
-
             int aCount = consecutiveRolls.Where(x => x.consecutive == i && x.charName == 'A').Count();
             int bCount = consecutiveRolls.Where(x => x.consecutive == i && x.charName == 'B').Count();
 
             // Using index 0 for A values and index 1 for B values
             finalResults[i, 0] = aCount;
-            finalResults[i, 1] = bCount;
-
-            Console.WriteLine("Consecutive times A has occured with length " + i + ": " + finalResults[i, 0]);
-            Console.WriteLine("Consecutive times B has occured with length " + i + ": " + finalResults[i, 1]);
+            finalResults[i, 1] = bCount;         
         }
 
-        //int i = 1;
-        //while (true)
-        //{
-        //    //consecutiveChars.Add(consecutiveRolls.Where(x => x.consecutive == i).Select(x => x.charName));
-            
+        Console.WriteLine("\n//////////////////////////////////// \nConsecutive A wins along with length \n////////////////////////////////////\n");
+        for (int i=0; i<=currMaxConsec; i++)
+        {
+            if (finalResults[i, 0] != 0)
+            {
+                Console.WriteLine("Number of consec. wins for A at length " + i + ": " + finalResults[i, 0]);
+            }
+        }
 
-        //    //consecutiveChars.Add(temp);
-        //}
+        Console.WriteLine("\n//////////////////////////////////// \nConsecutive B wins along with length \n////////////////////////////////////\n");
+        for (int i = 0; i <= currMaxConsec; i++)
+        {
+            if (finalResults[i, 1] != 0)
+            {
+                Console.WriteLine("Number of consec. wins for B at length " + i + ": " + finalResults[i, 0]);
+            }
+        }
+
 
         Console.WriteLine(collection[2] + " rolls were done.");
         Console.WriteLine("A has won " + A + " times, and B has won " + B + " times.");
