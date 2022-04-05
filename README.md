@@ -1,4 +1,4 @@
-# Consecutive occurences using given odds
+# Consecutive occurrences using given odds
 
 ```cmd
 Inputs: (1) odds of A happening
